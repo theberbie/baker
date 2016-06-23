@@ -7,7 +7,11 @@ class Artisan::ProductsController < ApplicationController
 
   def create
     @product = current_user.products.create(product_params)
+    if @product.valid?
     redirect_to artisan_product_path(@product)
+  else
+    render :new, status: :unprocessable_entity
+  end
   end
 
   def show
