@@ -2,6 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+html,
+body {
+  height: 100%;
+  
+}
+
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+
+#footer {
+  height:60px;
+}
+
 .hero {
  background: url('jams.jpg')no-repeat center center fixed;
  -webkit-background-size: cover;
@@ -11,6 +30,33 @@
   height:370px;
   box-shadow: 0px 3px 8px #2a2a2a;
 
+}
+
+.navbar {
+  border-radius:0;
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 200;
+  box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.navbar-inverse a.navbar-brand {
+  font-family: "Helvetica Neue", Helvetica;
+  font-weight: 100;
+  color:white;
+}
+
+.booyah-box {
+  -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
+  box-shadow: 1px 1px 2px 0 #d0d0d0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
+  padding:10px;
+}
+
+.booyah-box h2, .booyah-box h1 {
+  margin:10px;
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -38,20 +84,38 @@ h1, h2, h3, h4, h5, h6, .navbar {
   width:200px;
   height:200px;
   font-size: 100px;
-  margin:0 auto;
+  
+  text-align: center
 
 
 }
 
 .number {
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 40px;
+
+
 }
 .arrow {
   font-size:100px;
 }
 
-.sign-up {
-  margin:20px;
+ h3 {
+  margin-top:40px;
+}
+
+.clr {
+  clear:both;
+}
+
+#footer {
+  height:100px;
+  color:white;
+  background:black;
+  font-family: "Helvetica Neue",Helvetica;
+}
+
+#footer a {
+  color:white;
+  font-weight: 100;
+  padding:10px 0;
 }
