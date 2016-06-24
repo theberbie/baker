@@ -1,5 +1,6 @@
 Baker::Application.routes.draw do
   devise_for :users
+  devise_for :artisans
   root 'static_pages#index'
   resources :products, only:[:index, :show]
   namespace :artisan do 

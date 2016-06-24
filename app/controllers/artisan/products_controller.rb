@@ -1,5 +1,6 @@
 class Artisan::ProductsController < ApplicationController
   before_action :authenticate_user!
+  #before_filter :ensure_artisan!
 
   def new
     @product = Product.new
@@ -24,4 +25,7 @@ class Artisan::ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :category, :cost)
     
   end
+
+  
+  
 end

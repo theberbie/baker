@@ -5,12 +5,14 @@
   <hr />
 
   <% @products.each do |product| %>
-    <h2 class="text-center"> <%= product.name %> </h2>
+    <h2 class="text-center"> 
+      <%= link_to product.name, product_path(product)%>
+    </h2>
     <div class="col-sm-8 col-xs-12">
       <%= product.description %>
     </div>
     <div class="col-sm-4 col-xs-12 text-center">
-      <%=link_to 'Buy item', '#', class:'btn btn-success btn-md'%>
+      <%=link_to 'Buy item', product_path(product), class:'btn btn-success btn-md'%>
           </div>
         <br class="clr"/>
   <% end %> 

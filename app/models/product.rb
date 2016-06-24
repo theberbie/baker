@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  belongs_to :user
+  belongs_to :artisans
+  belongs_to :users
 
   validates :name, presence: true
   validates :description, presence: true

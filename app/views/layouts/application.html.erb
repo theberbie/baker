@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Baker</title>
+  <title>Urban Patissier</title>
+  <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -19,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%=link_to 'Village Baker', root_path, class:'navbar-brand'%>
+      <%=link_to 'Urban Patissier', root_path, class:'navbar-brand'%>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -42,6 +43,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><%=link_to 'Our Mission', url:'#', class:'navbar'%> </li>
         <% if user_signed_in? %>
+        <li><%= link_to current_user.username %> </li>
         <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:'navbar'%></li>
         <% else %>
         <li><%=link_to "Sign Up", new_user_registration_path %> </li>
@@ -72,7 +74,7 @@
     <div class="container">
       <b>Footer Here</b>
       <br />
-      <%= link_to 'Join Village Bakery', new_artisan_product_path%>
+      <%= link_to 'Join Urban Patissier', new_artisan_registration_path%>
     </div>
   </div>
 
