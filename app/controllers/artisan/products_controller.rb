@@ -1,6 +1,6 @@
 class Artisan::ProductsController < ApplicationController
-  before_action :authenticate_user!
-  #before_filter :ensure_artisan!
+  before_action :authenticate_artisan!
+ 
 
   def new
     @product = Product.new

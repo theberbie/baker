@@ -7,18 +7,21 @@
   <span class="label label-danger"> 
     <%= number_to_currency @product.cost %>
     </span>
+    
 
-   <% if current_artisan && current_user == @product.artisan %>
-    <br />
-    <br />
-   <%= link_to "Administer", artisan_product_path(@product), class:'btn btn-danger btn-md' %>
-   <% end %>
-  </div>
+    <% if current_user && current_user == @product.user %>
+      <br />
+      <br />
+      <%= link_to 'Administer', artisan_product_path(@product), class: 'btn btn-danger btn-large' %>
+
+    <% end %>
+ 
 
 
-    </div>
+   
     <div class="col-sm-8 col-xs-12">
     <%= @product.description %>
+  </div>
   </div>
 
 </div>
