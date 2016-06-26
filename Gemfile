@@ -39,7 +39,9 @@ gem 'sprockets', '2.11.0'
 gem 'sass-rails'
 gem 'devise'
 gem 'simple_form'
-
+gem 'carrierwave'
+gem 'figaro'
+gem 'fog'
 #gem 'omniauth-facebook'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7

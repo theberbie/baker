@@ -22,7 +22,7 @@ class Artisan::ProductsController < ApplicationController
   private 
 
   def product_params
-    params.require(:product).permit(:name, :description, :category, :cost)
+    params.require(:product).permit(:name, :description, :category, :cost, :image)
     
   end
 

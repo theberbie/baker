@@ -1,6 +1,10 @@
 class Product < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+
   belongs_to :artisan
   belongs_to :user
+
+  
 
   validates :name, presence: true
   validates :description, presence: true
