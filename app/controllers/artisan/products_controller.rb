@@ -1,5 +1,5 @@
 class Artisan::ProductsController < ApplicationController
-  before_action :authenticate_artisan!
+  before_action :authenticate_user!
  
 
   def new
@@ -9,7 +9,8 @@ class Artisan::ProductsController < ApplicationController
   def create
     @product = current_user.products.create(product_params)
     if @product.valid?
-    redirect_to artisan_product_path(@product)
+    redirect_to root_path
+
   else
     render :new, status: :unprocessable_entity
   end

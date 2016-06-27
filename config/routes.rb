@@ -1,11 +1,24 @@
 Baker::Application.routes.draw do
-  devise_for :users
+  #devise_for :users, skip: [:registrations]
   devise_for :artisans
+  devise_for :customers, skip: :sessions
+
+  devise_for :users do
+  delete 'logout', to: 'sessions#destroy', as: :destroy_user_session
+  get 'login', to: 'sessions#new', as: :new_user_session
+  put 'login', to: 'sessions#create', as: :user_session
+end
+
   root 'static_pages#index'
-  resources :products, only:[:index, :show]
-  namespace :artisan do 
+  resources :products, only: [:index, :show]
+  namespace :artisan do
+    root to: "static_pages#index" 
     resources :products, only:[:new, :create, :show]
   end
+
+
+   
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
