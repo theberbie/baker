@@ -63,8 +63,11 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
     end
 
     def configure_permitted_parameters
-      devise_parameters_sanitizer.for(:sign_up) {|u| u.permit(:name, :email, :username, :date_of_birth)}
-     end
+    added_attrs = [:username,:date_of_birth, :email, :password, :password_confirmation, :remember_me]
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
+  end
+end
 
 end
 
