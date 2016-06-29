@@ -1,21 +1,14 @@
 class ApplicationController < ActionController::Base
-before_filter :configure_permitted_parameters, if: :devise_controller?
+  protect_from_forgery
+  helper_method :account_url
 
-
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-
-   helper_method  :current_customer, :current_artisan,
-                :require_customer!, :require_artisan!
-
-  def account_url
+ def account_url
     return new_user_session_url unless user_signed_in?
     case current_user.class.name
     when "Artisan"
-      artisan_root_url
+      new_artisan_registration_url
     when "Customer"
-      carrier_root_url
+      customer_root
     else
       root_url
     end if user_signed_in?
@@ -61,16 +54,16 @@ before_filter :configure_permitted_parameters, if: :devise_controller?
         return false
       end
     end
+ protected
 
-    def configure_permitted_parameters
-    added_attrs = [:username,:date_of_birth, :email, :password, :password_confirmation, :remember_me]
-    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
-    devise_parameter_sanitizer.permit :account_update, keys: added_attrs
-  end
+  def configure_permitted_parameters
+   devise_parameter_sanitizer.for(:sign_in)        << :username
+   devise_parameter_sanitizer.for(:sign_up)        << :username
+   devise_parameter_sanitizer.for(:account_update) << :username
 end
 
+
 end
 
 
-
-
+  
