@@ -1,11 +1,7 @@
 Baker::Application.routes.draw do
-   devise_for :users, :controller => {:sessions  => 'sessions'} do
-    delete '/logout', :to => 'sessions#destroy', :as => :destroy_user_session
-    get '/login', :to => 'sessions#new', :as => :new_user_session
-    post '/login', :to => 'sessions#create', :as => :user_session
-end
+   devise_for :users, :controller => {registrations:'registrations'} 
   devise_for :artisans
-  devise_for :customers, :skip => :sessions
+  devise_for :customers
 
   root 'static_pages#index'
 

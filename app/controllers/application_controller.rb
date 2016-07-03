@@ -6,9 +6,9 @@ class ApplicationController < ActionController::Base
     return new_user_session_url unless user_signed_in?
     case current_user.class.name
     when "Artisan"
-      new_artisan_registration_url
+      new_artisan_registration
     when "Customer"
-      customer_root
+      new_customer_registration_url
     else
       root_url
     end if user_signed_in?

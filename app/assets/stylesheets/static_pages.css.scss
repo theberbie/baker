@@ -6,6 +6,7 @@ html,
 body {
   font-family: 'Play', sans-serif;
   height: 100%;
+  background:url('dark_embroidery.png');
   
 }
 
@@ -82,30 +83,18 @@ h1, h2, h3, h4, h5, h6, .navbar {
   botder-radius:0;
 }
 
-.numba {
-  border-radius:50%;
-  background: #99ffbb;
-  width:200px;
-  height:200px;
-  font-size: 100px;
-  
-  text-align: center
-
-
+.h3 {
+  margin-top:20px;
 }
 
-.number {
-  text-align: center;
 
 
-}
-.arrow {
+.arrow, .left_arrow{
   font-size:100px;
+  color:rgba(0,151,188,0.55);
+  
 }
 
- h3 {
-  margin-top:40px;
-}
 
 .clr {
   clear:both;
@@ -131,3 +120,40 @@ h1, h2, h3, h4, h5, h6, .navbar {
   padding:8px;
   margin:10px;
 }
+
+.container {
+  color:white;
+}
+
+/* .step1, .step2, .step3 {
+  max-width: 940px;
+  text-align: center;
+  border:1px solid white;
+  margin-left: 30%;
+}
+*/
+.approval , .permit , .brownie {
+  max-width: 350px;
+  max-height: 245px;
+
+  
+}
+
+.approval, .brownie {
+  margin-left:20px;
+}
+
+.permit {
+  margin-right:20px;
+}
+
+/*.dash {
+  background: 
+    width: 105px;
+    height: 19px;
+    margin:5% auto;
+}
+
+*/ 
+
+
