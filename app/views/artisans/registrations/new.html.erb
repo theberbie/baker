@@ -2,6 +2,7 @@
 <h2> Join Urban Patissier As an Artisan Today! </h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= f.hidden_field :is_artisan, :value => 1 %> 
   <%= f.error_notification %>
 <div class="form-inputs">
 

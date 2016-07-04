@@ -5,9 +5,9 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   devise :database_authenticatable, :registerable,
-     :recoverable, :rememberable, :trackable, :validatable, :authentication_keys => [:login]
+     :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessible :name, :email, :password, :password_confirmation, :username
+  attr_accessible :name, :email, :password, :password_confirmation
     attr_accessor :login
 
 

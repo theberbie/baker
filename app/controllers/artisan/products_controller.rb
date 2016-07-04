@@ -1,5 +1,5 @@
 class Artisan::ProductsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_artisan!
  
 
   def new

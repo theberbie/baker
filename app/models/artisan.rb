@@ -1,4 +1,4 @@
 class Artisan < User
-
+ 
   
 end
