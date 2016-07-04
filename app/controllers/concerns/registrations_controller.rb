@@ -39,3 +39,4 @@ def configure_account_update_params
       u.permit(:first_name, :last_name, :user_name, :email, :password, :password_confirmation, :current_password, :avatar, :avatar_cache)
   end
 end
+end
