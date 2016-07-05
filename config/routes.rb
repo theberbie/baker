@@ -1,5 +1,5 @@
 Baker::Application.routes.draw do
-   devise_for :users, :controller => {registrations:'registrations'} 
+   devise_for :users, :controller => {registrations:'users/registrations'} 
   devise_for :artisans
   devise_for :customers
 
