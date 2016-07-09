@@ -5,8 +5,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :omniauthable, :omniauth_providers => [:facebook]
-
+         :recoverable, :rememberable, :trackable, :validatable
 def self.from_omniauth(auth)
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
