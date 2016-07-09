@@ -1,5 +1,5 @@
 Baker::Application.routes.draw do
-   devise_for :users, :controllers => {registrations:"users/registrations"} 
+   devise_for :users, :controllers => {registrations:"users/registrations", :omniauth_callbacks => "users/omniauth_callbacks" } 
   devise_for :artisans
   devise_for :customers
 
@@ -8,7 +8,13 @@ Baker::Application.routes.draw do
   resources :products, only: [:index, :show]
   namespace :artisan do
     resources :products, only:[:new, :create, :show]
+
+
   end
+
+#get '/auth/facebook/callback' => 'sessions#create'
+
+
 
 
  
