@@ -10,7 +10,10 @@ Baker::Application.routes.draw do
     resources :products, only:[:new, :create, :show]
 
 
+
   end
+
+    resources :user_steps
 
 #get '/auth/facebook/callback' => 'sessions#create'
 
