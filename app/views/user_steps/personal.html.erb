@@ -3,32 +3,30 @@
      <h1 class="col-md-5 col-sm-12 col-xs-12">Registration</h1> 
     <div class="checkout-wrap col-md-7 col-sm-12 col-xs-12 pull-right">
         <ul class="checkout-bar">
-            <li class="active"><a href="#get-started" data-toggle="tab">Get Started</a>
+            <li><%=link_to 'Get Started', {:anchor => "personal"}, {:data => {:toggle => 'tab'} }%>
             </li>
-            <li class=""><a href="#about-you" data-toggle="tab">About You</a>
-            </li>
-            <li class=""><a href="#looking-for" data-toggle="tab">Looking For</a>
+            <li class=""> <%=link_to 'About you', {:anchor => "social"}, {:data => {:toggle=>"tab"} }%>
             </li>
             <li class=""><a href="#">Review</a>
             </li>
         </ul>
     </div>
 </div>
+
 <div class="row">
     <div class="tabbable-panel">
         <div class="tabbable-line">
             <ul class="nav nav-tabs ">
-                <li class="active"><a href="#get-started" data-toggle="tab"> Get Started </a>
-                </li>
-                <li><a href="#about-you" data-toggle="tab"> About You </a>
-                </li>
-                <li><a href="#looking-for" data-toggle="tab"> Looking For </a>
-                </li>
+                
+                <li>
+                <%=link_to 'Get Started', {:anchor => "personal"}, {:data => {:toggle => 'tab'} }%>        </li>
+               <li class=""> <%=link_to 'About you', {:anchor => "social"}, {:data => {:toggle=>"tab"} }%>
+            </li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="get-started">
                     <div class="form">
-                        <asp:ValidationSummary runat="server" CssClass="text-danger" />
+                       
                         <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
                             <div class="row">
                                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -53,6 +51,7 @@
                         
                         <div class="col-md-6 col-sm-6 col-xs-12 no-padding">
                             <div class="row">
+                            <h1> About you</h1>
                                 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                                           <%= f.error_notification %>
 
@@ -67,13 +66,13 @@
                                           
 
 
-                                        <% end %> 
+                                        <% end %>  -->
                                     </div>
                                   </div>
                                 
                                 </div>
                               </div>
-                            
+
 
                             
 

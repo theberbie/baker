@@ -1,34 +1,5 @@
 <div class="booyah-box">
 
-<div class="row">
-<h1 class="col-md-5 col-sm-12 col-xs-12"> Sign Up </h1>
-  <div class="checkout-wrap col-md-7 col-sm-12 col-xs-12 pull-right">
-    <ul class="checkout-bar">
-      <li class="active">
-        <%=link_to 'Personal', wizard_path, "data-toggle"=>"tab"%>
-        </li>
-        <li>
-        <%=link_to 'Social', wizard_path, "data-toggle"=>"tab"%>
-        </li>
-        <li> <%=link_to 'Review', url:"#" %></li>
-      </ul>
-    </div>
-  </div>
-
-<div class="row">
-  <div class="t bable-panel">
-    <div class="tabbable-line">
-      <ul class="nav nav-tabs">
-        <li class="active"> 
-          <%=link_to 'Get Started', url: user_steps_path(@user),id:'get-started', "data-toggle"=> "tab"%>
-          </li>
-          <li> <%=link_to 'Social', url: user_steps_path(:social),id:'social', "data-toggle"=> "tab"%>
-          </li>
-          </ul>
-
-          <div class="content">
-            <div class="tab-pane active" id="social">
-              <div class="form">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
